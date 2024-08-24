@@ -1,0 +1,133 @@
+$color_1: #333;
+$color_2: white;
+$background-color_1: #f4f4f4;
+$background-color_2: #fff;
+$background-color_3: #007BFF;
+$background-color_4: #0056b3;
+
+@keyframes fadeInSlide {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.mainContacto {
+	padding: 20px;
+	background-color: $background-color_1;
+}
+.tituloContacto {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 2.5rem;
+	color: $color_1;
+	animation: fadeInSlide 1.5s ease-out;
+}
+.contact-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	gap: 20px;
+	section {
+		flex: 1;
+		margin: 10px;
+		min-width: 300px;
+	}
+}
+.contact-form {
+	background-color: $background-color_2;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	h2 {
+		margin-top: 0;
+		margin-bottom: 20px;
+		font-size: 24px;
+		color: $color_1;
+		text-align: center;
+	}
+	label {
+		display: block;
+		margin-bottom: 5px;
+		font-weight: bold;
+		color: $color_1;
+	}
+	input {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px;
+	}
+	textarea {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		font-size: 16px;
+		height: 100px;
+		resize: vertical;
+	}
+	button {
+		background-color: $background-color_3;
+		color: $color_2;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		font-size: 16px;
+		cursor: pointer;
+		width: 100%;
+		&:hover {
+			background-color: $background-color_4;
+		}
+	}
+}
+.mapaContacto {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: $background-color_2;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	iframe {
+		width: 100%;
+		height: 450px;
+		border: 0;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+}
+@media (max-width: 768px) {
+	.contact-container {
+		flex-direction: column;
+		align-items: center;
+	}
+	.contact-form {
+		width: 90%;
+	}
+	.mapaContacto {
+		width: 90%;
+	}
+}
+@media (max-width: 480px) {
+	.tituloContacto {
+		font-size: 2rem;
+	}
+	.mapaContacto {
+		iframe {
+			height: 300px;
+		}
+	}
+	.contact-form {
+		button {
+			padding: 12px;
+		}
+	}
+}

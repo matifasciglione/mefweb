@@ -1,0 +1,127 @@
+$color_1: #333;
+$color_2: #007BFF;
+$color_3: white;
+$background-color_1: #f9f9f9;
+$background-color_2: #fff;
+$background-color_3: #007BFF;
+$background-color_4: #0056b3;
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+mainPportofolio {
+	padding: 20px;
+	background-color: $background-color_1;
+	color: $color_1;
+}
+.mainPportofolio {
+	h1 {
+		text-align: center;
+		font-size: 2.5em;
+		margin-bottom: 20px;
+		color: $color_2;
+		animation: fadeIn 1.5s ease-out;
+	}
+	section {
+		text-align: center;
+		margin-bottom: 40px;
+		h2 {
+			font-size: 2em;
+			color: $color_2;
+			animation: fadeInUp 1.5s ease-out;
+		}
+	}
+}
+.portfolioClientes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	article {
+		background-color: $background-color_2;
+		border-radius: 8px;
+		overflow: hidden;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		flex: 1 1 250px;
+		max-width: 300px;
+		text-align: center;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		animation: fadeInUp 1s ease-out;
+		&:hover {
+			transform: scale(1.05);
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+		}
+	}
+	img {
+		width: 100%;
+		height: 150px;
+		object-fit: cover;
+		display: block;
+	}
+	a {
+		display: block;
+		padding: 10px;
+		background-color: $background-color_3;
+		color: $color_3;
+		text-decoration: none;
+		font-size: 1.1em;
+		border-radius: 0 0 8px 8px;
+		transition: background-color 0.3s ease;
+		&:hover {
+			background-color: $background-color_4;
+		}
+	}
+}
+@media (max-width: 768px) {
+	.mainPportofolio {
+		h1 {
+			font-size: 2rem;
+		}
+		section {
+			h2 {
+				font-size: 1.5rem;
+			}
+		}
+	}
+	.portfolioClientes {
+		gap: 10px;
+	}
+}
+@media (max-width: 480px) {
+	.mainPportofolio {
+		h1 {
+			font-size: 1.8rem;
+		}
+		section {
+			h2 {
+				font-size: 1.2rem;
+			}
+		}
+	}
+	.portfolioClientes {
+		gap: 5px;
+		article {
+			flex: 1 1 90%;
+		}
+		a {
+			font-size: 1em;
+		}
+	}
+}
